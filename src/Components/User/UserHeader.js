@@ -15,7 +15,7 @@ const UserHeader = () => {
       "/conta/postar": "Poste sua foto",
       default: "Minha Conta",
     };
-    return titles[title] || titles["default"];
+    return titles[title] || titles.default;
   }
 
   React.useEffect(() => {
