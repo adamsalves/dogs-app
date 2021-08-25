@@ -1,0 +1,57 @@
+/**
+ * ==============================================
+ * Dot Flashing
+ * ==============================================
+ */
+.dotFlashing {
+  position: relative;
+  width: 5px;
+  height: 5px;
+  border-radius: 5px;
+  background-color: #aaa;
+  color: #aaa;
+  animation: dotFlashing 1s infinite linear alternate;
+  animation-delay: 0.5s;
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.dotFlashing::before,
+.dotFlashing::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+}
+
+.dotFlashing::before {
+  left: -15px;
+  width: 5px;
+  height: 5px;
+  border-radius: 5px;
+  background-color: #aaa;
+  color: #aaa;
+  animation: dotFlashing 1s infinite alternate;
+  animation-delay: 0s;
+}
+
+.dotFlashing::after {
+  left: 15px;
+  width: 5px;
+  height: 5px;
+  border-radius: 5px;
+  background-color: #aaa;
+  color: #aaa;
+  animation: dotFlashing 1s infinite alternate;
+  animation-delay: 1s;
+}
+
+@keyframes dotFlashing {
+  0% {
+    background-color: #aaa;
+  }
+  50%,
+  100% {
+    background-color: #eee;
+  }
+}
