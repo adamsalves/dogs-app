@@ -90,3 +90,15 @@ export function COMMENT_POST(id, comment, token) {
     },
   };
 }
+
+export function PHOTO_DELETE(id, token) {
+  return {
+    url: `${API_URL}/api/photo/${id}`,
+    options: {
+      method: "DELETE",
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    },
+  };
+}
