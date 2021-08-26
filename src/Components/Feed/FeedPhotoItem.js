@@ -2,9 +2,9 @@ import React from "react";
 import Image from "../../Helpers/Image";
 import styles from "./FeedPhotoItem.module.css";
 
-const FeedPhotoItem = ({ photo, setmodalPhoto }) => {
+const FeedPhotoItem = ({ photo, setModalPhoto }) => {
   function handleClick() {
-    setmodalPhoto(photo);
+    setModalPhoto(photo);
   }
   return (
     <li className={styles.photo} onClick={handleClick}>

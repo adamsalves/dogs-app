@@ -6,7 +6,7 @@ import Error from "../../Helpers/Error";
 import Loading from "../../Helpers/Loading";
 import PhotoContent from "../Photo/PhotoContent";
 
-const FeedModal = ({ photo, setmodalPhoto }) => {
+const FeedModal = ({ photo, setModalPhoto }) => {
   const { data, loading, error, request } = useFetch();
 
   React.useEffect(() => {
@@ -15,7 +15,7 @@ const FeedModal = ({ photo, setmodalPhoto }) => {
   }, [photo, request]);
 
   function handleOutsiteClick(event) {
-    if (event.target === event.currentTarget) setmodalPhoto(null);
+    if (event.target === event.currentTarget) setModalPhoto(null);
   }
 
   return (
