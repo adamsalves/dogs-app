@@ -6,6 +6,7 @@ import { UserContext } from "../../UserContext";
 import Button from "../Forms/Button";
 import Input from "../Forms/Input";
 import Error from "../../Helpers/Error";
+import Head from "../../Helpers/Head";
 
 const LoginCreate = () => {
   const username = useForm();
@@ -17,17 +18,20 @@ const LoginCreate = () => {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    const { url, options } = USER_POST({
-      username: username.value,
-      email: email.value,
-      password: password.value,
-    });
-    const { response } = await request(url, options);
-    if (response.ok) userLogin(username.value, password.value);
+    if (username.validate() && email.validate() && password.validate()) {
+      const { url, options } = USER_POST({
+        username: username.value,
+        email: email.value,
+        password: password.value,
+      });
+      const { response } = await request(url, options);
+      if (response.ok) userLogin(username.value, password.value);
+    }
   }
 
   return (
     <section className="animeLeft">
+      <Head title="Crie uma conta" />
       <h2 className="title">Cadastra-se</h2>
       <form onSubmit={handleSubmit}>
         <Input label="Usuário" type="text" name="usuario" {...username} />
